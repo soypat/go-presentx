@@ -1,0 +1,119 @@
+# Go para novatos
+Un curso aceleradisimo
+4 Nov 2020
+Tags: foo, bar, baz
+Summary: Oldtown funk gonna funk u up
+OldURL: https://a/
+
+Patricio Whittingslow
+Agustín Canalis
+pwhittingslow@itba.edu.ar
+acanalis@itba.edu.ar
+
+## CODE
+
+.play -edit hello.go
+
+## Welcome to future
+
+It is nothing like you thought
+
+### Today everything changes {#anchor}
+
+It begins with you. Some things to keep in mind
+- You are not indispensable
+- You are one with ZA̡͊͠͝LGΌ
+
+#### Sub-subsection
+
+Some More text
+
+	Preformatted text (code block)
+	is indented (by one tab, or four spaces)
+
+
+## Section 2: Example formatting {#fmt}
+
+Further Text, including command invocations.
+: Presenter notes
+// underscore to preserve aspect ratio
+.image ../go-img/sitting_gopher.svg 300 _
+.caption _Gopher_ design by [[https://instagram.com/reneefrench][Renee French]]. Traced by Patricio Whittingslow
+
+## What a go program is
+Behold, below a hello-world program
+
+.code hello.go /package/,/END/ HLhello
+
+but do not tarry on it, let us pick it apart so as to understand.
+
+## The program
+
+Our program simply runs the following line of code
+
+.code hello.go /fmt\./
+
+Where we are:
+- calling the function **`Println`**
+- from package **`fmt`**
+- with the `string` argument **`Hello world!`**
+
+## Functions and main function
+
+If we have many files we must tell Go where to start the program.
+We do this using the special **`main`** function. 
+
+Typical go function syntax:
+
+.code trash.go /TYPICAL_FUNC_START/,/TYPICAL_FUNC_END/
+
+The special `main` function takes no argument and returns nothing.
+When our Go program starts, this is where it begins (_almost always!_)
+
+.code hello.go /START/,/END/ HLmain
+
+## What's that other jazz?
+
+Every go file begins with the package declaration!
+
+.code hello.go /package/,/import/
+
+The **`main`** package is special as it
+means the package defines a runnable program
+
+The package declaration is followed by the **imports**
+
+All imports are declared after the package declaration and
+are usually written as follows:
+
+.code trash.go /3IMP_START/,/3IMP_END/
+
+
+## that out of the way...
+
+Let's run it!
+
+.play -edit hello.go
+
+
+## Things to keep in mind
+
+- There are only 2 special functions in Go: `main` and `init`
+: Not really important to know `init`
+- `main` package needs a `main()` function to run
+- `main` function can only be declared **once**
+
+**Functions warning!**:
+- When learning Go for the first time use capital letters for functions. 
+  More on this later!
+: Capital letter functions are exported
+: What this means is that they are available when imported by other packages/programs
+
+## Special video
+How Go came to be. A video all gophers should see.
+
+.iframe https://www.youtube.com/embed/sX8r6zATHGU 500 800
+
+## img 
+.image ../go-img/engine-gopher.jpg 300 _
+// comment

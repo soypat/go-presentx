@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Go para novatos</title>
+    <meta charset='utf-8'>
+    <script>
+      var notesEnabled =  false ;
+    </script>
+    <script src='../static/slides.js'></script>
+
+    
+
+    <script>
+      
+      if (window["location"] && window["location"]["hostname"] == "talks.golang.org") {
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-11222381-6"]);
+        _gaq.push(["b._setAccount", "UA-49880327-6"]);
+        window.trackPageview = function() {
+          _gaq.push(["_trackPageview", location.pathname+location.hash]);
+          _gaq.push(["b._trackPageview", location.pathname+location.hash]);
+        };
+        window.trackPageview();
+        window.trackEvent = function(category, action, opt_label, opt_value, opt_noninteraction) {
+          _gaq.push(["_trackEvent", category, action, opt_label, opt_value, opt_noninteraction]);
+          _gaq.push(["b._trackEvent", category, action, opt_label, opt_value, opt_noninteraction]);
+        };
+      }
+    </script>
+  </head>
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen'>
+
+      <article>
+        <h1>Go para novatos</h1>
+        <h3>Un curso aceleradisimo</h3>
+        <h3>4 November 2020</h3>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    Patricio Whittingslow
+  </p>
+  
+
+  
+  <p>
+    Agustín Canalis
+  </p>
+  
+
+          </div>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    
+  </p>
+  
+
+          </div>
+        
+      </article>
+
+  
+  
+      <article >
+      
+        <h3>Welcome to future</h3>
+        <p>It is nothing like you thought</p>
+
+  <h2 id="TOC_1.1.">1.1. Today everything changes</h2>
+  <p>It begins with you. Some things to keep in mind</p>
+<ul>
+<li>You are not indispensable</li>
+<li>You are one with ZA̡͊͠͝LGΌ</li>
+</ul>
+
+  <h3 id="TOC_1.1.1.">1.1.1. Sub-subsection</h3>
+  <p>Some More text</p>
+<pre><code>Preformatted text (code block)
+is indented (by one tab, or four spaces)</code></pre>
+
+
+
+      
+      <span class="pagenumber">2</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Section 2: Example formatting</h3>
+        <p>Further Text, including command invocations.</p>
+
+<div class="image">
+  <img src="../go-img/sitting_gopher.svg" height="300">
+</div>
+<figcaption><i>Gopher</i> design by <a href="https://instagram.com/reneefrench" target="_blank">Renee French</a>. Traced by Patricio Whittingslow</figcaption>
+      
+      <span class="pagenumber">3</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>What a go program is</h3>
+        <p>Behold, below a hello-world program</p>
+
+  <div class="code" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="6">func main() {</span>
+<span num="7">    <b>fmt.Println(&#34;Hello world!&#34;)</b></span>
+<span num="8">}</span>
+</pre>
+</div>
+<p>but do not tarry on it, let us pick it apart so as to understand.</p>
+
+      
+      <span class="pagenumber">4</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>The program</h3>
+        <p>Our program simply runs the following line of code</p>
+
+  <div class="code" >
+<pre><span num="7">    fmt.Println(&#34;Hello world!&#34;)</span>
+</pre>
+</div>
+<p>Where we are:</p>
+<ul>
+<li>calling the function <strong><code>Println</code></strong></li>
+<li>from package <strong><code>fmt</code></strong></li>
+<li>with the <code>string</code> argument <strong><code>Hello world!</code></strong></li>
+</ul>
+
+      
+      <span class="pagenumber">5</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Functions and main function</h3>
+        <p>If we have many files we must tell Go where to start the program.
+We do this using the special <strong><code>main</code></strong> function.</p>
+<p>Typical go function syntax:</p>
+
+  <div class="code" >
+<pre><span num="11">func FuncName(arg1 Type) retType {</span>
+<span num="12">    return arg1</span>
+<span num="13">}</span>
+</pre>
+</div>
+<p>The special <code>main</code> function takes no argument and returns nothing.
+When our Go program starts, this is where it begins (<em>almost always!</em>)</p>
+
+  <div class="code" >
+<pre><span num="6"><b>func main() {</b></span>
+<span num="7">    fmt.Println(&#34;Hello world!&#34;)</span>
+<span num="8"><b>}</b></span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">6</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>What&#39;s that other jazz?</h3>
+        <p>Every go file begins with the package declaration!</p>
+
+  <div class="code" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+</pre>
+</div>
+<p>The <strong><code>main</code></strong> package is special as it
+means the package defines a runnable program</p>
+<p>The package declaration is followed by the <strong>imports</strong></p>
+<p>All imports are declared after the package declaration and
+are usually written as follows:</p>
+
+  <div class="code" >
+<pre><span num="3">import (</span>
+<span num="4">    &#34;fmt&#34;</span>
+<span num="5">    &#34;io&#34;</span>
+<span num="6">    &#34;os&#34;</span>
+<span num="7">)</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">7</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>that out of the way...</h3>
+        <p>Let's run it!</p>
+
+  <div class="code playground" contenteditable="true" spellcheck="false">
+<pre contenteditable="true" spellcheck="false"><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="6">func main() {</span>
+<span num="7">    fmt.Println(&#34;Hello world!&#34;)</span>
+<span num="8">}</span>
+</pre>
+</div>
+
+      
+      <span class="pagenumber">8</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Things to keep in mind</h3>
+        <ul>
+<li>There are only 2 special functions in Go: <code>main</code> and <code>init</code></li>
+</ul>
+<ul>
+<li><code>main</code> package needs a <code>main()</code> function to run</li>
+<li><code>main</code> function can only be declared <strong>once</strong></li>
+</ul>
+<p><strong>Functions warning!</strong>:</p>
+<ul>
+<li>When learning Go for the first time use capital letters for functions.
+More on this later!</li>
+</ul>
+
+      
+      <span class="pagenumber">9</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Special video</h3>
+        <p>How Go came to be. A video all gophers should see.</p>
+
+<iframe src="https://www.youtube.com/embed/sX8r6zATHGU" height="500" width="800"></iframe>
+
+      
+      <span class="pagenumber">10</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>img</h3>
+        
+<div class="image">
+  <img src="../go-img/engine-gopher.jpg" height="300">
+</div>
+
+      
+      <span class="pagenumber">11</span>
+      </article>
+  
+  
+
+      <article>
+        <h3>Thank you</h3>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    Patricio Whittingslow
+  </p>
+  
+
+  
+  <p>
+    Agustín Canalis
+  </p>
+  
+<p class="link"><a href="mailto:pwhittingslow@itba.edu.ar" target="_blank">pwhittingslow@itba.edu.ar</a></p><p class="link"><a href="mailto:acanalis@itba.edu.ar" target="_blank">acanalis@itba.edu.ar</a></p>
+          </div>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    
+  </p>
+  
+
+          </div>
+        
+      </article>
+
+    </section>
+
+    <div id="help">
+      Use the left and right arrow keys or click the left and right
+      edges of the page to navigate between slides.<br>
+      (Press 'H' or navigate to hide this message.)
+    </div>
+
+    
+    <script src='../static/play.js'></script>
+    
+
+    <script>
+      (function() {
+        
+        if (window["location"] && window["location"]["hostname"] == "talks.golang.org") {
+          var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+          ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+          var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+        }
+      })();
+    </script>
+  </body>
+</html>

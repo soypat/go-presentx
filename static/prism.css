@@ -37,8 +37,6 @@ pre[class*="language-"] {
 	padding: 0.6em;
 	margin: .5em 0;
 	overflow: auto;
-	/*caret size */
-	
 }
 
 :not(pre) > code[class*="language-"],

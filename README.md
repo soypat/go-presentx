@@ -2,7 +2,7 @@
 
 ![presentx screenshot](./_assets/screen1.png)
 
-golang's [present tool](https://github.com/golang/tools/tree/master/cmd/present) but with code syntax highlighting
+Go's [present tool](https://github.com/golang/tools/tree/master/cmd/present) but with code syntax highlighting. Highlighted code is editable with [some caveats](#about-the-syntax-highlighting-changes)
 
 This is a quick and dirty implementation of [flippeeer's reddit post](https://www.reddit.com/r/golang/comments/jpugtg/today_i_presented_go_to_my_team_the_screen/).
 
@@ -17,6 +17,7 @@ go run . -base .
 PRs welcome.
 
 ## About the syntax highlighting changes
+* No auto-rendering while editing
 * Uses the lightweight [prism.js](https://prismjs.com/) for syntax highlighting
 * Change code style by replacing `static/prism.css` with one from prism.js' site and modifying it to fit your needs (see [css config section](#prism-css-config))
 * Press <kbd>CTRL</kbd> while in editable code block to re-render all syntax

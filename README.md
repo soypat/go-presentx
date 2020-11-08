@@ -15,7 +15,7 @@ PRs welcome.
 
 ## About the playground
 * Uses the lightweight [prism.js](https://prismjs.com/) for syntax highlighting
-* Change code style by downloading `prism.css` from prism.js' site and modifying it to fit your needs (see [css config section](#prism-css-config))
+* Change code style by replacing `static/prism.css` with one from prism.js' site and modifying it to fit your needs (see [css config section](#prism-css-config))
 * Press <kbd>CTRL</kbd> while in editable code block to re-render all syntax
 
 ## Prism CSS config 

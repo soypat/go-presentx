@@ -128,16 +128,42 @@
       //   elem.removeAttribute("contenteditable");
       // })
       
-      $('div[contenteditable="true"]').on("keyup",function(event) {
-        var k = event.keyCode || event.which; // keycode
-        if (k == 17) {
-          editableCodeElems.forEach(function(el) {
-          el.innerHTML = el.innerHTML.replace(/[<]br[/]?[>]/gi,"\n"); // replace newline breaks with actual newline chars
-          Prism.highlightElement(el);
+    $('div[contenteditable="true"]').on("keyup",function(event) {
+      var k = event.keyCode || event.which; // keycode
+      if (k == 17) {
+        editableCodeElems.forEach(function(el) {
+        el.innerHTML = el.innerHTML.replace(/[<]br[/]?[>]/gi,"\n"); // replace newline breaks with actual newline chars
+        Prism.highlightElement(el);
         })
-        }
+      }
     });
-    
+
+    // insert tab in code context
+    $('div[contenteditable="true"]').on("keydown",function(event) {
+      var k = event.keyCode || event.which; // keycode
+      if (k == 9) {
+        event.preventDefault();
+        document.execCommand('insertHTML', false, '\t');
+      }
+    });
+
+    $(document).delegate('div[contenteditable="true"]', 'keydown', function (e) {
+    var keyCode = e.keyCode || e.which;
+    if (keyCode == 9) {
+        e.preventDefault();
+        var start = this.selectionStart;
+        var end = this.selectionEnd;
+        var tab = '   '
+        // set textarea value to: text before caret + tab + text after caret
+        
+        $(this).val($(this).val().substring(0, start)
+            + tab
+            + $(this).val().substring(end));
+        // put caret at right position again
+        this.selectionStart =
+            this.selectionEnd = start + tab.length;
+    }
+});
 
     
     // var keys = {};

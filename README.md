@@ -6,15 +6,15 @@ Go's [present tool](https://github.com/golang/tools/tree/master/cmd/present) but
 
 This is a quick and dirty implementation of [flippeeer's reddit post](https://www.reddit.com/r/golang/comments/jpugtg/today_i_presented_go_to_my_team_the_screen/).
 
-Requires Go installed. Enable modules with `go env -w GO111MODULE="on"`
+### Requirements and instructions
+
+* Requires Go installed. Enable modules with `go env -w GO111MODULE="on"`
 
 Start presentation on [127.0.0.1:3999](http://127.0.0.1:3999/) (default) by running:
 
 ```console
 go run . -base .
 ```
-
-PRs welcome.
 
 ## About the syntax highlighting changes
 * No auto-rendering while editing
@@ -37,3 +37,9 @@ pre[class*="language-"] {
     padding: 0.6em;
 }
 ```
+
+##  Contributing, License and authors
+
+PRs welcome. 
+
+idk, [same license as Go](https://github.com/golang/go/blob/master/LICENSE) I guess. Credit to **[The Go Authors.](https://github.com/golang/go/blob/master/AUTHORS)**

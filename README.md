@@ -12,3 +12,17 @@ go run . -base .
 ```
 
 PRs welcome.
+
+### Prism CSS config
+Non-default settings listed:
+
+```css
+pre[class*="language-"] {
+    font-size: 0.9em;
+    border-radius: 5px;
+    line-height: 1.2;
+}
+pre[class*="language-"] {
+    padding: 0.6em;
+}
+```

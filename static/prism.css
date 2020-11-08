@@ -12,6 +12,7 @@ pre[class*="language-"] {
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	font-size: 0.9em;
+	border-radius: 5px;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -32,7 +33,7 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: 0.6em;
 	margin: .5em 0;
 	overflow: auto;
 }

@@ -241,10 +241,10 @@
     margin-top: 400px !important;
     margin-bottom: 100px !important;
   }
-
+/* legacy - taken over by prism.js
   div.code {
     background: rgb(240, 240, 240);
-  }
+  } */
 
   /* Add explicit links */
   a:link:after,
@@ -359,7 +359,8 @@ li {
   margin: 0 0 0.5em 0;
 }
 
-div.code {
+/*legacy - taken over by prism.js
+ div.code {
   padding: 5px 10px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -367,7 +368,7 @@ div.code {
 
   background: rgb(240, 240, 240);
   border: 1px solid rgb(224, 224, 224);
-}
+} */
 pre {
   margin: 0;
   padding: 0;
@@ -386,12 +387,13 @@ pre.numbers span:before {
   display: inline-block;
 }
 
+/* legacy - taken over by prism.js
 code {
   font-size: 95%;
   font-family: 'Droid Sans Mono', 'Courier New', monospace;
 
   color: black;
-}
+} */
 
 article > .image,
 article > .video {
@@ -432,10 +434,10 @@ p.link {
   right: 10px;
 }
 
-/* Code */
-div.code {
+/* Code legacy - taken over by prism.js */
+/* div.code {
   outline: 0px solid transparent;
-}
+} */
 div.playground {
   position: relative;
 }

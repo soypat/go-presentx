@@ -119,15 +119,10 @@
     </script>
     
     <script>
-    
-         // Prism.highlightElement(this);
-      // Prism.highlightAll();
       var editableElems = document.querySelectorAll('div[contenteditable="true"]');
       var editableCodeElems = document.querySelectorAll('div > pre > code');
-      // editableElems.forEach((elem) => {
-      //   elem.removeAttribute("contenteditable");
-      // })
-      
+
+    // render Prism
     $('div[contenteditable="true"]').on("keyup",function(event) {
       var k = event.keyCode || event.which; // keycode
       if (k == 17) {
@@ -146,48 +141,6 @@
         document.execCommand('insertHTML', false, '\t');
       }
     });
-
-
-
-    
-    // var keys = {};
-    
-    // $(document).keydown(function (e) {
-    //     keys[e.which] = true;
-    // });
-
-    // $(document).keyup(function (e) {
-    //     delete keys[e.which];
-    // });
-
-    // let deferPresentationMove = function () {
-    //   if (keys[8] || keys[32]) {
-
-    //   }
-    // }
-    // }
-    // });
-    // var inEditing = false;
-    // $(editableSelector).on("focus", function(event) {
-    //   inEditing = true;
-    // });
-    // $(editableSelector).on("blur", function(event) {
-    //   inEditing = false;
-    // });
-    // $(editableSelector).on("keydown", function(event) {
-    //   var keyCode = event.keyCode || event.which;
-    //   if (inEditing && (keyCode == 8 || keyCode == 32 )) {
-    //     event.preventDefault();
-    //   }
-    // });
-
-      // document.querySelectorAll('div[contenteditable="true"]').forEach((block) => {
-
-      // })
-    // $('div[contenteditable="true"]').on("keyup",function() {
-    //     Prism.highlightElement(this);
-    // });
-
     </script>
   </body>
 </html>

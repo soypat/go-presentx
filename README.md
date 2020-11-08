@@ -18,10 +18,14 @@ go run . -base .
 
 ## About the syntax highlighting changes
 * No auto-rendering while editing
+
 * Uses the lightweight [prism.js](https://prismjs.com/) for syntax highlighting
+
 * Change code style by replacing `static/prism.css` with one from prism.js' site and modifying it to fit your needs (see [css config section](#prism-css-config))
+
 * Press <kbd>CTRL</kbd> while in editable code block to re-render all syntax
 
+* Issue with the caret being invisible at times and sometimes appearing to be on the next line
 ## Prism CSS config 
 
 Non-default settings listed:
@@ -40,6 +44,6 @@ pre[class*="language-"] {
 
 ##  Contributing, License and authors
 
-PRs welcome. 
+PRs welcome. I'll look at issues, I'll try to be nice.
 
 idk, [same license as Go](https://github.com/golang/go/blob/master/LICENSE) I guess. Credit to **[The Go Authors.](https://github.com/golang/go/blob/master/AUTHORS)**

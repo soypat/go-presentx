@@ -1,0 +1,249 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Medium.eot")
+      format("embedded-opentype"),
+    url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Medium.woff2")
+      format("woff2"),
+    url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Medium.woff")
+      format("woff"),
+    url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/ttf/JetBrainsMono-Medium.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.slides > article {
+  text-shadow: none !important;
+}
+
+div.code {
+  background: #24292e !important;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 6px -3px rgba(0, 0, 0.1);
+  padding: 1.2rem 1.8rem !important;
+  border: none !important;
+  margin: 0.5em 0;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  hyphens: none;
+  color: inherit;
+  text-shadow: none;
+  font-family: "JetBrains Mono", monospace;
+
+  -webkit-font-feature-settings: "liga" on, "calt" on;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  line-height: 1.3em;
+  font-weight: 500;
+  letter-spacing: 0 !important;
+}
+
+code[class*="language-"]::-moz-selection,
+pre[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection,
+pre[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  opacity: 1;
+  color: #fafbfc;
+  background: #363636;
+}
+
+code[class*="language-"]::selection,
+pre[class*="language-"]::selection,
+code[class*="language-"] ::selection,
+pre[class*="language-"] ::selection {
+  text-shadow: none;
+  opacity: 1;
+  color: #fafbfc;
+  background: #363636;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none !important;
+  }
+}
+
+:not(pre) > code[class*="language-"] {
+  white-space: normal;
+  color: #fafbfc;
+  background: #24292e;
+  border-radius: 0.2em;
+}
+
+pre > code[class*="language-"] {
+  background: none;
+}
+
+pre[class*="language-"] {
+  overflow: auto;
+  position: relative;
+  color: #fafbfc;
+  background: #24292e;
+  border-radius: 0;
+}
+
+pre[class*="language-"].language-css > code,
+pre[class*="language-"].language-sass > code,
+pre[class*="language-"].language-scss > code {
+  color: #fd9170;
+}
+
+[class*="language-"] .namespace {
+  opacity: 0.7;
+}
+
+.token.atrule {
+  color: #ff6171;
+}
+
+.token.attr-name {
+  color: #ffcb6b;
+}
+
+.token.attr-value {
+  color: #b392f0;
+}
+
+.token.attribute {
+  color: #b392f0;
+}
+
+.token.boolean {
+  color: #ff6171;
+}
+
+.token.builtin {
+  color: #ff6171;
+}
+
+.token.cdata {
+  color: #80cbc4;
+}
+
+.token.char {
+  color: #80cbc4;
+}
+
+.token.class {
+  color: #ffcb6b;
+}
+
+.token.class-name {
+  color: #b392f0;
+}
+
+.token.comment {
+  color: #6a737d;
+}
+
+.token.constant {
+  color: #ff6171;
+}
+
+.token.deleted {
+  color: #b392f0;
+}
+
+.token.doctype {
+  color: #6a737d;
+}
+
+.token.entity {
+  color: #b392f0;
+}
+
+.token.function {
+  color: #61a7ff;
+}
+
+.token.hexcode {
+  color: #61a7ff;
+}
+
+.token.id {
+  color: #ff6171;
+  font-weight: bold;
+}
+
+.token.important {
+  color: #ff6171;
+  font-weight: bold;
+}
+
+.token.inserted {
+  color: #80cbc4;
+}
+
+.token.keyword {
+  color: #ff6171;
+}
+
+.token.number {
+  color: #fd9170;
+}
+
+.token.operator {
+  color: #89ddff;
+}
+
+.token.prolog {
+  color: #6a737d;
+}
+
+.token.property {
+  color: #fafbfc;
+}
+
+.token.pseudo-class {
+  color: #b392f0;
+}
+
+.token.pseudo-element {
+  color: #b392f0;
+}
+
+.token.punctuation {
+  color: #89ddff;
+}
+
+.token.regex {
+  color: #61a7ff;
+}
+
+.token.selector {
+  color: #b392f0;
+}
+
+.token.string {
+  color: #a3d0ff;
+}
+
+.token.symbol {
+  color: #ff6171;
+}
+
+.token.tag {
+  color: #b392f0;
+}
+
+.token.unit {
+  color: #fd9170;
+}
+
+.token.url {
+  color: #b392f0;
+}
+
+.token.variable {
+  color: #b392f0;
+}

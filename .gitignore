@@ -1,0 +1,6 @@
+# Ignore user created slides which are not part of the
+# example
+slides/*
+!slides/hello.go
+!slides/trash.go
+!slides/sample.slide

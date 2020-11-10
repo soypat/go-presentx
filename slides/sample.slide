@@ -37,7 +37,7 @@ Some More text
 Further Text, including command invocations.
 : Presenter notes
 // underscore to preserve aspect ratio
-.image ../go-img/sitting_gopher.svg 300 _
+.image ../assets/go-img/sitting_gopher.svg 300 _
 .caption _Gopher_ design by [[https://instagram.com/reneefrench][Renee French]]. Traced by Patricio Whittingslow
 
 ## What a go program is
@@ -115,5 +115,5 @@ How Go came to be. A video all gophers should see.
 .iframe https://www.youtube.com/embed/sX8r6zATHGU 500 800
 
 ## img 
-.image ../go-img/engine-gopher.jpg 300 _
+.image ../assets/go-img/engine-gopher.jpg 300 _
 // comment

@@ -4,3 +4,11 @@ slides/*
 !slides/hello.go
 !slides/trash.go
 !slides/sample.slide
+
+# Ignore user added assets except for 
+# sample slide images
+assets/*
+!assets/go-img
+assets/go-img/*
+!assets/go-img/sitting_gopher.svg
+!assets/go-img/engine-gopher.jpg

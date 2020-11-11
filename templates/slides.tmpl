@@ -120,12 +120,32 @@
 
  
     <script>
+Prism.plugins.NormalizeWhitespace.setDefaults({
+    'remove-trailing': true,
+    'remove-indent': false,
+    'remove-initial-line-feed': true,
+    'left-trim': false,
+    'right-trim': true
+
+    /*'break-lines': 80,
+    'indent': 2,
+
+    'tabs-to-spaces': 4,
+    'spaces-to-tabs': 4*/
+  });
+
       var editableElems = document.querySelectorAll('div[contenteditable="true"]');
-      var editableCodeElems = document.querySelectorAll('div > pre > code pre[contenteditable="true"]');
+      var editableCodeElems = document.querySelectorAll('div > pre > code pre[contenteditable="true"], code > pre');
       editableCodeElems.forEach(function(el) {
         el.innerHTML = el.innerHTML.replace(/[<]br[/]?[>]/gi,"\n"); // replace newline breaks with actual newline chars
         Prism.highlightElement(el);
+        if (el.previousElementSibling) {
+          el.previousElementSibling.innerHTML = el.previousElementSibling.innerHTML.replace(/\s*?$/gm,"").replace(/^\s*?/gm,"")
+        }
+        // el.innerHTML = el.innerHTML.replace(/^\s*?/gm,"")
+        // el.innerHTML = el.innerHTML.replace(/^\s*?/gm,"")
         })
+        
     // render Prism
     $('div[contenteditable="true"]').on("keyup",function(event) {
       var k = event.keyCode || event.which; // keycode
@@ -150,39 +170,7 @@
         document.execCommand('insertHTML', false, '\t');
       }
     });
-    function getCaretCharacterOffsetWithin(element) {
-      var caretOffset = 0;
-      var doc = element.ownerDocument || element.document;
-      var win = doc.defaultView || doc.parentWindow;
-      var sel;
-      if (typeof win.getSelection != "undefined") {
-          sel = win.getSelection();
-          if (sel.rangeCount > 0) {
-              var range = win.getSelection().getRangeAt(0);
-              var preCaretRange = range.cloneRange();
-              preCaretRange.selectNodeContents(element);
-              preCaretRange.setEnd(range.endContainer, range.endOffset);
-              caretOffset = preCaretRange.toString().length;
-          }
-      } else if ( (sel = doc.selection) && sel.type != "Control") {
-          var textRange = sel.createRange();
-          var preCaretTextRange = doc.body.createTextRange();
-          preCaretTextRange.moveToElementText(element);
-          preCaretTextRange.setEndPoint("EndToEnd", textRange);
-          caretOffset = preCaretTextRange.text.length;
-      }
-      return caretOffset;
-}
-function setCaret(el) {
-    var range = document.createRange()
-    var sel = window.getSelection()
-    
-    range.setStart(el.childNodes[0], 2)
-    range.collapse(true)
-    
-    sel.removeAllRanges()
-    sel.addRange(range)
-}
+  
     </script>
   </body>
 </html>

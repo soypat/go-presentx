@@ -93,7 +93,7 @@ are usually written as follows:
 
 Let's run it!
 
-.play -edit hello.go
+.play -edit hello.go /IN/,/OUT/
 
 
 ## Things to keep in mind

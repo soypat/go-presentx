@@ -28,6 +28,8 @@ go run . -base .
 * Issue with the caret being invisible at times and sometimes appearing to be on the next line
 ## Prism CSS config 
 
+* Ligatures off by default. You may enable them in `prism-github-dark.css` by setting `"calt"` to `on` (see comment).
+
 Non-default settings listed:
 
 ```css

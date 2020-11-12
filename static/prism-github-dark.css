@@ -36,8 +36,9 @@ pre[class*="language-"] {
   color: inherit;
   text-shadow: none;
   font-family: "JetBrains Mono", monospace;
-
-  -webkit-font-feature-settings: "liga" on, "calt" on;
+  /* set calt to on to enable ligatures */
+  font-feature-settings: "liga" on, "calt" off;
+  -webkit-font-feature-settings: "liga" on, "calt" off;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 

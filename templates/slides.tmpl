@@ -120,20 +120,6 @@
 
  
     <script>
-Prism.plugins.NormalizeWhitespace.setDefaults({
-    'remove-trailing': true,
-    'remove-indent': false,
-    'remove-initial-line-feed': true,
-    'left-trim': false,
-    'right-trim': true
-
-    /*'break-lines': 80,
-    'indent': 2,
-
-    'tabs-to-spaces': 4,
-    'spaces-to-tabs': 4*/
-  });
-
       var editableElems = document.querySelectorAll('div[contenteditable="true"]');
       var editableCodeElems = document.querySelectorAll('div > pre > code pre[contenteditable="true"], code > pre');
       editableCodeElems.forEach(function(el) {
@@ -142,25 +128,19 @@ Prism.plugins.NormalizeWhitespace.setDefaults({
         if (el.previousElementSibling) {
           el.previousElementSibling.innerHTML = el.previousElementSibling.innerHTML.replace(/\s*?$/gm,"").replace(/^\s*?/gm,"")
         }
-        // el.innerHTML = el.innerHTML.replace(/^\s*?/gm,"")
-        // el.innerHTML = el.innerHTML.replace(/^\s*?/gm,"")
         })
-        
+    
     // render Prism
-    $('div[contenteditable="true"]').on("keyup",function(event) {
-      var k = event.keyCode || event.which; // keycode
-      if (k == 17) {
-        let pos = getCaretCharacterOffsetWithin($(this)[0]);
-        editableCodeElems.forEach(function(el) {
-        el.innerHTML = el.innerHTML.replace(/[<]br[/]?[>]/gi,"\n"); // replace newline breaks with actual newline chars
-        Prism.highlightElement(el);
-        })
-        console.log("moving caret to position",pos)
-        console.log("in element",this)
-        setCaret($(this)[0])
-        // event.selectionStart = pos;
-      }
-    });
+    editableElems.forEach(function(el) {
+      el.addEventListener("keyup", event => {
+        var k = event.keyCode || event.which; // keycode
+        if (k == 17) {
+          let codeElem = el.querySelector('pre > code pre[contenteditable="true"], code > pre')
+          codeElem.innerHTML = codeElem.innerHTML.replace(/[<]br[/]?[>]/gi,"\n"); // replace newline breaks with actual newline chars
+          Prism.highlightElement(codeElem);
+        }
+      });
+    })
 
     // insert tab in code context
     $('div[contenteditable="true"]').on("keydown",function(event) {

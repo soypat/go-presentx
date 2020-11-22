@@ -23,6 +23,7 @@ div.code {
   padding: 0rem 2rem !important;
   border: none !important;
   margin: 0.5em 0;
+  tab-size: 4;
 }
 
 code[class*="language-"],

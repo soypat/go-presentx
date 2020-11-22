@@ -119,38 +119,53 @@
     </script>
 
  
-    <script>
-      var editableElems = document.querySelectorAll('div[contenteditable="true"]');
-      var editableCodeElems = document.querySelectorAll('div > pre > code pre[contenteditable="true"], code > pre');
-      editableCodeElems.forEach(function(el) {
+    <script> 
+      var codeElem = document.querySelectorAll('div.noedit code pre');
+      var editableCodeElems = document.querySelectorAll('div.edit code pre[contenteditable="true"]');
+      var focusableEditElems = document.querySelectorAll('div.edit, div.edit code, div.edit pre');
+      
+      // render single element code. Formats element and renders Prism
+      function renderGo(el) {
         el.innerHTML = el.innerHTML.replace(/[<]br[/]?[>]/gi,"\n"); // replace newline breaks with actual newline chars
         Prism.highlightElement(el);
-        if (el.previousElementSibling) {
-          el.previousElementSibling.innerHTML = el.previousElementSibling.innerHTML.replace(/\s*?$/gm,"").replace(/^\s*?/gm,"")
-        }
-        })
-    
-    // render Prism
-    editableElems.forEach(function(el) {
+      }
+      
+      // renders all editable elements.
+      // is separate from non editables to provide fast syntaxhighlighting on-the-fly
+      function renderEditables() {
+        document.querySelectorAll('div.edit code pre[contenteditable="true"]').forEach(renderGo);
+        // writing code creates new pre elements, gotta search for them all every time! what a bore!
+        // editableCodeElems.forEach(renderGo);
+      }
+      
+      // renders all code elements. Should only be called once upon window loading
+      function renderAll() {
+        renderEditables();
+        codeElem.forEach(renderGo)
+      }
+
+    // renders syntax highlighting on the fly using Ctrl key
+    function addRenderListener(el) {
       el.addEventListener("keyup", event => {
         var k = event.keyCode || event.which; // keycode
         if (k == 17) {
-          let codeElem = el.querySelector('pre > code pre[contenteditable="true"], code > pre')
-          codeElem.innerHTML = codeElem.innerHTML.replace(/[<]br[/]?[>]/gi,"\n"); // replace newline breaks with actual newline chars
-          Prism.highlightElement(codeElem);
+          renderEditables();
         }
       });
-    })
+    }
+    
+    focusableEditElems.forEach(addRenderListener) // adds event listener for on the fly highlighting
+    renderAll(); // renders all code
 
     // insert tab in code context
     $('div[contenteditable="true"]').on("keydown",function(event) {
       var k = event.keyCode || event.which; // keycode
       if (k == 9) {
         event.preventDefault();
-        document.execCommand('insertHTML', false, '\t');
+        document.execCommand('insertHTML', false, '    ');
       }
     });
-  
+
     </script>
   </body>
 </html>
@@ -158,4 +173,5 @@
 
 {{define "newline"}}
 <br>
+
 {{end}}

@@ -16,6 +16,15 @@ Start presentation on [127.0.0.1:3999](http://127.0.0.1:3999/) (default) by runn
 go run . -base .
 ```
 
+## Installation
+
+The following commands will generate an executable tool for your OS and architecture. Requires Go
+```console
+git clone https://github.com/soypat/go-presentx.git
+cd go-presentx
+go build
+```
+
 ## About the syntax highlighting changes
 * No auto-rendering while editing
 

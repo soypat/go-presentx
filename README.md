@@ -6,24 +6,36 @@ Go's [present tool](https://github.com/golang/tools/tree/master/cmd/present) but
 
 This is a quick and dirty implementation of [flippeeer's reddit post](https://www.reddit.com/r/golang/comments/jpugtg/today_i_presented_go_to_my_team_the_screen/).
 
-### Requirements and instructions
+## Usage
+
+Requires `go-presentx` installed and a prepared directory with `./templates` and `./static` folder. You may clone this repo and run `go-presentx` in the directory to be up and running on [127.0.0.1:3999](http://127.0.0.1:3999/). Go to `slides` link and open a `.slide` file to start a presentation.
+
+You can serve the presentation on the internet configuring `-orighost` flag to your public domain. You may have to configure websockets if using a reverse-proxy like NGINX.
+
+## Installation
+
+See [releases](https://github.com/soypat/go-presentx/releases) executables for windows/linux/mac binaries.
+
+To install from source: the following commands will generate an executable tool for your OS and architecture. Requires Go
+
+```console
+git clone https://github.com/soypat/go-presentx.git
+cd go-presentx
+go install
+```
+`go-presentx` shall be installed to your `$GOPATH/bin`. Add this directory to your `PATH` to be able to call `go-presentx` from console.
+
+
+### Development
 
 * Requires Go installed. Enable modules with `go env -w GO111MODULE="on"`
 
 Start presentation on [127.0.0.1:3999](http://127.0.0.1:3999/) (default) by running:
 
 ```console
-go run . -base .
+go run . 
 ```
 
-## Installation
-
-The following commands will generate an executable tool for your OS and architecture. Requires Go
-```console
-git clone https://github.com/soypat/go-presentx.git
-cd go-presentx
-go build
-```
 
 ## About the syntax highlighting changes
 * No auto-rendering while editing

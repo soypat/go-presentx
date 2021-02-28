@@ -65,7 +65,7 @@ We do this using the special **`main`** function.
 
 Typical go function syntax:
 
-.code trash.go /TYPICAL_FUNC_START/,/TYPICAL_FUNC_END/
+.code trash.g /TYPICAL_FUNC_START/,/TYPICAL_FUNC_END/
 
 The special `main` function takes no argument and returns nothing.
 When our Go program starts, this is where it begins (_almost always!_)
@@ -86,7 +86,7 @@ The package declaration is followed by the **imports**
 All imports are declared after the package declaration and
 are usually written as follows:
 
-.code trash.go /3IMP_START/,/3IMP_END/
+.code trash.g /3IMP_START/,/3IMP_END/
 
 
 ## that out of the way...

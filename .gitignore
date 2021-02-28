@@ -1,9 +1,11 @@
 # Ignore user created slides which are not part of the
 # example
-slides/*
-!slides/hello.go
-!slides/trash.go
-!slides/sample.slide
+# slides/*
+# !slides/_samplesrc/**.go
+# !slides/README.md
+# !slides/hello.go
+# !slides/trash.go
+# !slides/sample.slide
 
 # Ignore user added assets except for 
 # sample slide images

@@ -1,0 +1,45 @@
+# Go programming language for people who already program
+Or 'Why Go?' -- A short discourse
+28 Feb 2021
+Tags: go, syntax, benefits
+Summary: Why should anyone learn Go of all programming languages, old and new? This presentation attempts to answer this question.
+OldURL: https://n/a
+
+Patricio Whittingslow
+pwhittingslow@itba.edu.ar
+
+## Why Go?
+* An alternative to huge languages of the "industry" (C++ and Java)
+* Garbage collection a must
+
+## What makes Go?
+* An engaging community
+* The Go1 promise (backwards compatibility)
+* Versioning is an important part of developing API
+* Easy concurrency!
+* Relatively sparse built-in functionality
+* Tooling: Batteries included
+
+.image ../assets/whygo/emojisupport.png 200 _
+.caption Emojis are the way of showing support for language changes to Go.
+
+## What is Go used for?
+* Web development
+* CLI
+
+>"I like the programming model of Go. Using goroutines is so easy and fun… if you're building a server, I can't imagine using anything other than Go."  
+**Ryan Dahl** - *Interview with Ryan Dahl*, Creator of Node.js - 2017
+
+## Handwavy "Why should I learn Go?"
+* Compiled vs interpreted? Go brings the best of both worlds
+* Errors as values - encourages everyone to deal with errors
+* 3rd Party Documentation
+* SOLID oriented
+* If not for anything else, **Concurrency**
+
+## What you won't miss from other languages
+* Interrupting coding flow to search documentation online
+* Limited portability
+* Weak type systems
+* Third party tooling (testing, dependencies)
+* Breaking your program every other week

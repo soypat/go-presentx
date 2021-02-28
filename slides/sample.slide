@@ -12,7 +12,7 @@ acanalis@itba.edu.ar
 
 ## CODE
 
-.play -edit hello.go
+.play -edit _samplesrc/hello.go
 
 ## Welcome to future
 
@@ -43,7 +43,7 @@ Further Text, including command invocations.
 ## What a go program is
 Behold, below a hello-world program
 
-.code hello.go /package/,/END/ HLhello
+.code _samplesrc/hello.go /package/,/END/ HLhello
 
 but do not tarry on it, let us pick it apart so as to understand.
 
@@ -51,7 +51,7 @@ but do not tarry on it, let us pick it apart so as to understand.
 
 Our program simply runs the following line of code
 
-.code hello.go /fmt\./
+.code _samplesrc/hello.go /fmt\./
 
 Where we are:
 - calling the function **`Println`**
@@ -65,18 +65,18 @@ We do this using the special **`main`** function.
 
 Typical go function syntax:
 
-.code trash.g /TYPICAL_FUNC_START/,/TYPICAL_FUNC_END/
+.code _samplesrc/trash.go /TYPICAL_FUNC_START/,/TYPICAL_FUNC_END/
 
 The special `main` function takes no argument and returns nothing.
 When our Go program starts, this is where it begins (_almost always!_)
 
-.code hello.go /START/,/END/ HLmain
+.code _samplesrc/hello.go /START/,/END/ HLmain
 
 ## What's that other jazz?
 
 Every go file begins with the package declaration!
 
-.code hello.go /package/,/import/
+.code _samplesrc/hello.go /package/,/import/
 
 The **`main`** package is special as it
 means the package defines a runnable program
@@ -86,14 +86,14 @@ The package declaration is followed by the **imports**
 All imports are declared after the package declaration and
 are usually written as follows:
 
-.code trash.g /3IMP_START/,/3IMP_END/
+.code _samplesrc/trash.go /3IMP_START/,/3IMP_END/
 
 
 ## that out of the way...
 
 Let's run it!
 
-.play -edit hello.go /IN/,/OUT/
+.play -edit _samplesrc/hello.go /IN/,/OUT/
 
 
 ## Things to keep in mind

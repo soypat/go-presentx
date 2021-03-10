@@ -8,21 +8,21 @@ OldURL: https://n/a
 Patricio Whittingslow
 pwhittingslow@itba.edu.ar
 
-## Why Go?
-* An alternative to huge languages of the "industry" (C++ and Java)
-* Garbage collection a must
+## Porqué Go?
+* Una alternativa a los lenguajes masivos de la "industria" (C++/Java)
+* "Garbage collection"
 
 : 3 ingenieros de Google que se cansaron de la complejidad inecesaria. Estaban compilando un programa C++ que tardaba una hora cuando uno se puso a pensar "que pinta tendria el lenguaje ideal". Ahi empezó Go, como una idea en un pizarron blanco. Los 3 ingenieros se tenian que convencer de un "feature" antes de agregarlo
 : Go tiene 11 años. Python, C++ y Java tienen todos más de 25.
 : La especificación de C++ y Java tienen 1600 y 800 páginas (respectivamente). Que quiere decir? Te tenes que leer todas las páginas antes de entender todo lo que puede hacer el lenguaje. Go en comparasion tiene 80 páginas.
 
-## What makes Go?
-* An engaging community
-* The Go1 promise (backwards compatibility)
-* Versioning is an important part of developing API
-* Easy concurrency!
-* Relatively sparse built-in functionality
-* Tooling: Batteries included
+## Que es Go?
+* Comunidad activa _Open Source_
+* Promesa Go1 (compatibilidad _backwards_)
+* Emfasis en versionado
+* Concurencia fácil!
+* Funcionalidad _built-in_ esparsa
+* Herramientas incluidas
 
 .image ../assets/whygo/emojisupport.png 200 _
 .caption Emojis are the way of showing support for language changes to Go.

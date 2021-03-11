@@ -8,7 +8,7 @@ OldURL: https://n/a
 Patricio Whittingslow
 pwhittingslow@itba.edu.ar
 
-## Porqué Go?
+## ¿Por qué Go?
 * Una alternativa a los lenguajes masivos de la "industria" (C++/Java)
 * "Garbage collection"
 
@@ -16,11 +16,11 @@ pwhittingslow@itba.edu.ar
 : Go tiene 11 años. Python, C++ y Java tienen todos más de 25.
 : La especificación de C++ y Java tienen 1600 y 800 páginas (respectivamente). Que quiere decir? Te tenes que leer todas las páginas antes de entender todo lo que puede hacer el lenguaje. Go en comparasion tiene 80 páginas.
 
-## Que es Go?
+## ¿Que es Go?
 * Comunidad activa _Open Source_
 * Promesa Go1 (compatibilidad _backwards_)
-* Emfasis en versionado
-* Concurencia fácil!
+* Énfasis en versionado
+* Concurrencia fácil!
 * Funcionalidad _built-in_ esparsa
 * Herramientas incluidas
 
@@ -30,7 +30,7 @@ pwhittingslow@itba.edu.ar
 : Go es un lenguaje social primero. Hecho para fomentar el open source como nunca antes visto (todo software empresarial corre sobre una buena parte open-source, incluyendo LIA). ** Los programas Go perduran en el tiempo, todos los cambios son backwards compatible. Ver Python 1, 2 y 3.
 : Concurencia es tan facil de usar que asusta ** Pocas features comparados a otros lenguajes. Hay varias features que les faltarian a programadores de Java: function overloading y generics. Generics vienen a Go en 2021. ** Empezar a programar en Go es ridiculamente fácil debido al tooling que viene incluido
 
-## What is Go used for?
+## ¿Para qué se usa Go?
 * Web development
 * CLI
 * IoT
@@ -43,31 +43,32 @@ pwhittingslow@itba.edu.ar
 : También se usa para aplicaciones de linea de comando (nuestro caso) dado que es el lenguaje más portable del mundo.
 
 
-## Handwavy "Why should I learn Go?"
-* Compiled vs interpreted? Go brings the best of both worlds
-* Strong type system
-* Errors as values - encourages everyone to deal with errors
-* 3rd Party Documentation
-* SOLID oriented
-* If not for anything else, **Concurrency**
+## ¿Debería yo aprender Go?
+* Trae lo mejor del mundo compilado (rápido)
+* Sistema de tipos fuerte
+* Errores devueltos por funciones. Explícito
+* Documentación 3rd party
+* Programación SOLID
+* Si no están convencidos: **Concurrencia**
+
 
 : Go compila rapidisimo. Te permite iterar rápido sobre diseños. ** Go es fuertemente tipado. Mucho más que C y C++. Te permite evitar errores al momento de compilar. ** Los errores son valores: Todo usuario de Go tiene que lidiar con errores porque es un tipo que devuelve toda función que puede fallar, es decir, __explicitamente__. El resultado son programas mucho más robustos. 
 : La documentación es algo fundamental para publicar tu librería y viene con el código. ** Cumple con los principios SOLID, buenas prácticas para programación. ** Si no te convenci: la concurencia es motivo suficiente para usarlo. Te permite tener millones de procesos paralelos mientras que otros lenguajes luchan con llegar a los miles.
 
 
-## What you won't miss from other languages
-* Interrupting coding flow to search documentation online
-* Downloading libraries
-* Limited portability
-* Weak type systems
-* Third party tooling (testing, dependencies)
-* Breaking your program every other week
+## Qué no van a extrañar de otros lenguajes
+* Pausar a googlear algo (y mala documentación)
+* Descarga manual de librerías
+* Portabilidad limitada
+* Sistema de tipo débil
+* Herramental _third-party_
+* Romper el programa cada dos por tres
 
 : No tenes que parar a buscar que hace esa función. Lo podes hacer desde el editor. ** Las librerias se bajan solas y gracias al principio de versionado mínimo de Go, es virtualmente imposible que no ande un programa hecho hace tiempo. No hay necesidad de hacer virtualenvs
 : El sistema de tipado te permite saber con exactitud que es cada variable, y con que funciones se puede usar. Permite intellisense potente ** Los Go tools te permiten de entrada testear código, instalar dependencias automáticamente. Programar se vuelve un placer.
 : Olvidate de arreglar bugs que no son tu culpa.
 
-## Cosas que no mencione
+## Cosas que no mencioné
 
 * Garbage collection
 * Familiaridad - inspiración de otros lenguajes
@@ -77,3 +78,44 @@ pwhittingslow@itba.edu.ar
 : Es un lenguaje que se aprende en una tarde. Fue pensado para los que vienen de C++/Java pero hoy en día los que más migran son de Python y javascript. ** La encuesta de Python 2021 indica que los Pythonistas desean sistema de tipado más fuerte (21%), performance (20%) y programación concurrenta fácil (15%)  
 : Magia. Ningun built-in de Go enmascara una operación compleja y lenta. Es fácil seguir las recomendaciones y escribir programas rapidisimos.
 
+.play -edit _whygosrc/helloworld.go
+
+
+```python
+message = "Hello World"
+print(message)
+```
+
+## 
+
+.play -edit _whygosrc/concurrent.go
+
+##
+
+```python
+
+chan1 = []
+chan2 = []
+class t1(threading.Thread):
+   def __init__(self):
+      super(t1, self).__init__()
+   run(self):
+      chan1.append(True)
+      while len(chan2)==0:
+         pass
+      print(chan2.pop())
+
+class t2(threading.Thread):
+   def __init__(self):
+      super(t2, self).__init__()
+   run(self):
+      chan2.append(True)
+      while len(chan1)==0:
+         pass
+      print(chan1.pop())
+
+while True:
+  t1().start()
+  t2().start()
+
+```

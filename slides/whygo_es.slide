@@ -66,3 +66,14 @@ pwhittingslow@itba.edu.ar
 : No tenes que parar a buscar que hace esa función. Lo podes hacer desde el editor. ** Las librerias se bajan solas y gracias al principio de versionado mínimo de Go, es virtualmente imposible que no ande un programa hecho hace tiempo. No hay necesidad de hacer virtualenvs
 : El sistema de tipado te permite saber con exactitud que es cada variable, y con que funciones se puede usar. Permite intellisense potente ** Los Go tools te permiten de entrada testear código, instalar dependencias automáticamente. Programar se vuelve un placer.
 : Olvidate de arreglar bugs que no son tu culpa.
+
+## Cosas que no mencione
+
+* Garbage collection
+* Familiaridad - inspiración de otros lenguajes
+* Ausencia de "magia"
+
+: Cada punto engloba mucho a favor de Go y la verdad que merece su propia charla.
+: Es un lenguaje que se aprende en una tarde. Fue pensado para los que vienen de C++/Java pero hoy en día los que más migran son de Python y javascript. ** La encuesta de Python 2021 indica que los Pythonistas desean sistema de tipado más fuerte (21%), performance (20%) y programación concurrenta fácil (15%)  
+: Magia. Ningun built-in de Go enmascara una operación compleja y lenta. Es fácil seguir las recomendaciones y escribir programas rapidisimos.
+

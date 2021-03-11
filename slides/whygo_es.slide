@@ -94,12 +94,14 @@ print(message)
 
 ```python
 
+import threading
+
 chan1 = []
 chan2 = []
 class t1(threading.Thread):
    def __init__(self):
       super(t1, self).__init__()
-   run(self):
+   def run(self):
       chan1.append(True)
       while len(chan2)==0:
          pass
@@ -108,7 +110,7 @@ class t1(threading.Thread):
 class t2(threading.Thread):
    def __init__(self):
       super(t2, self).__init__()
-   run(self):
+   def run(self):
       chan2.append(True)
       while len(chan1)==0:
          pass

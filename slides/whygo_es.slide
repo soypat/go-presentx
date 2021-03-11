@@ -24,7 +24,7 @@ pwhittingslow@itba.edu.ar
 * Funcionalidad _built-in_ esparsa
 * Herramientas incluidas
 
-.image ../assets/whygo/emojisupport.png 200 _
+.image ../assets/whygo/emojis.png 200 _
 .caption Emojis are the way of showing support for language changes to Go.
 
 : Go es un lenguaje social primero. Hecho para fomentar el open source como nunca antes visto (todo software empresarial corre sobre una buena parte open-source, incluyendo LIA). ** Los programas Go perduran en el tiempo, todos los cambios son backwards compatible. Ver Python 1, 2 y 3.
@@ -86,7 +86,7 @@ message = "Hello World"
 print(message)
 ```
 
-## 
+## Ejemplos de concurrencia
 
 .play -edit _whygosrc/concurrent.go
 
@@ -117,5 +117,4 @@ class t2(threading.Thread):
 while True:
   t1().start()
   t2().start()
-
 ```

@@ -10,6 +10,7 @@
 # Ignore user added assets except for 
 # sample slide images
 assets/*
+!assets/whygo
 !assets/go-img
 assets/go-img/*
 !assets/go-img/sitting_gopher.svg

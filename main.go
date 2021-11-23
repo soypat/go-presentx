@@ -5,6 +5,7 @@
 package main
 
 import (
+	"embed"
 	"flag"
 	"fmt"
 	"go/build"
@@ -15,6 +16,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/soypat/rebed"
 	"golang.org/x/tools/present"
 )
 
@@ -27,6 +29,14 @@ var (
 	contentPath   = flag.String("content", ".", "base path for presentation content")
 	usePlayground = flag.Bool("use_playground", false, "run code snippets using play.golang.org; if false, run them locally and deliver results by WebSocket transport")
 	nativeClient  = flag.Bool("nacl", false, "use Native Client environment playground (prevents non-Go code execution) when using local WebSocket transport")
+)
+
+// Embedded directories
+var (
+	//go:embed templates
+	tempFS embed.FS
+	//go:embed static
+	staticFS embed.FS
 )
 
 func main() {
@@ -59,6 +69,11 @@ func main() {
 		}
 		*basePath = p.Dir
 	}
+
+	// We attempt to create templates and static files if not present
+	rebed.Patch(tempFS, "")
+	rebed.Patch(staticFS, "")
+
 	err := initTemplates(*basePath)
 	if err != nil {
 		log.Fatalf("Failed to parse templates: %v", err)
